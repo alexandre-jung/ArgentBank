@@ -8,7 +8,8 @@
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "npm run lint -- --fix",
     "preview": "vite preview",
-    "start": "vite"
+    "start": "vite",
+    "start:mockup": "http-server designs"
   },
   "devDependencies": {
     "@reduxjs/toolkit": "^1.8.5",
@@ -21,6 +22,7 @@
     "eslint": "^8.24.0",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "http-server": "^14.1.1",
     "jsdom": "^20.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

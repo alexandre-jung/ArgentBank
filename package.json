@@ -9,7 +9,8 @@
     "lint:fix": "npm run lint -- --fix",
     "preview": "vite preview",
     "start": "vite",
-    "start:mockup": "http-server designs"
+    "start:mockup": "http-server designs",
+    "test": "vitest"
   },
   "devDependencies": {
     "@reduxjs/toolkit": "^1.8.5",

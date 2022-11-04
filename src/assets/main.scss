@@ -1,0 +1,50 @@
+*,
+::before,
+::after {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #2c3e50;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.list-unstyled {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+}
+
+.ml-1 {
+  margin-left: 5px;
+}
+
+.ml-2 {
+  margin-left: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+
+  img {
+    max-width: 100%;
+    width: 200px;
+  }
+}
+
+nav a {
+  margin-right: 5px;
+}

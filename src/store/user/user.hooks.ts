@@ -20,10 +20,6 @@ export function useUserProfileQuery () {
   });
 }
 
-export function useUserProfile () {
-  return useAppSelector(state => state.user);
-}
-
 export function useFetchUserProfile () {
   const dispatch = useAppDispatch();
   return () => dispatch(profileThunk());

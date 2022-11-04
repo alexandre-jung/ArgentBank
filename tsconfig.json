@@ -28,17 +28,20 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@assets/*": [
-        "./assets/*"
-      ],
       "@api/*": [
         "./api/*"
       ],
-      "@store/*": [
-        "./store/*"
+      "@assets/*": [
+        "./assets/*"
       ],
       "@components/*": [
         "./components/*"
+      ],
+      "@routes/*": [
+        "./routes/*"
+      ],
+      "@store/*": [
+        "./store/*"
       ]
     }
   },

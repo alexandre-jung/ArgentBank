@@ -1,10 +1,14 @@
-import { LoginForm } from 'components';
+import { BrowserRouter } from 'react-router-dom';
+import { StoreProvider } from 'store';
+import Router from './Router';
 
 function App () {
   return (
-    <div className="App">
-      <LoginForm />
-    </div>
+    <StoreProvider>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </StoreProvider>
   );
 }
 

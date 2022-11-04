@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from 'store';
-import { authenticationThunk } from './auth.slice';
+import { actions, authenticationThunk } from './auth.slice';
 
 export function useAuthenticationQuery () {
   return useAppSelector(state => ({
@@ -11,6 +11,13 @@ export function useAuthenticationQuery () {
 
 export function useUserIsAuthenticated () {
   return useAppSelector(state => !!state.auth.token);
+}
+
+export function useLogout () {
+  const dispatch = useAppDispatch();
+  return () => {
+    dispatch(actions.logout());
+  };
 }
 
 export function useAuthenticate () {

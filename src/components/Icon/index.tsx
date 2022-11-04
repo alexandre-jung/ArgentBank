@@ -9,12 +9,10 @@ const ICONS = {
 export type IconProps = {
   name: keyof typeof ICONS;
   size?: number;
-} & Omit<
-  JSX.IntrinsicElements['svg'],
-  'width' | 'height' | 'fill' | 'children'
->;
+} & Omit<JSX.IntrinsicElements['svg'],
+  'width' | 'height' | 'fill' | 'children'>;
 
-function Icon({ name, size = 24, className = '', ...otherProps }: IconProps) {
+export function Icon ({ name, size = 24, className = '', ...otherProps }: IconProps) {
   const SvgComponent = ICONS[name];
 
   return (
@@ -27,5 +25,3 @@ function Icon({ name, size = 24, className = '', ...otherProps }: IconProps) {
     />
   );
 }
-
-export default Icon;

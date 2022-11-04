@@ -1,2 +1,6 @@
-export { default as Icon } from './Icon';
-export { default as LoginForm} from './LoginForm';
+export * from './Icon';
+export * from './LoginForm';
+export * from './PrivateRoute';
+export * from './Navigation';
+export * from './Header';
+export * from './Logo';

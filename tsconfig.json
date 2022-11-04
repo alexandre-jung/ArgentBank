@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
@@ -24,10 +28,26 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@assets/*": ["./assets/*"],
-      "@components/*": ["./components/*"]
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@api/*": [
+        "./api/*"
+      ],
+      "@store/*": [
+        "./store/*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ]
     }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

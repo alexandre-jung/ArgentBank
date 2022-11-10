@@ -1,11 +1,11 @@
 import { SyntheticEvent, useState } from 'react';
-import { BASE_URL, endpoints } from 'api/config';
 import { useFetchUserProfile } from 'store/user';
-import { useAuthenticate } from 'store/auth';
+import { useAuthenticate, useAuthenticationQuery } from 'store/auth';
 
 export function LoginForm () {
   const authenticate = useAuthenticate();
   const fetchProfile = useFetchUserProfile();
+  const { error } = useAuthenticationQuery();
 
   const [email, setEmail] = useState('tony@stark.com');
   const [password, setPassword] = useState('password123');
@@ -26,8 +26,6 @@ export function LoginForm () {
 
   return (
     <form
-      action={BASE_URL + '/' + endpoints.user.login}
-      method="post"
       onSubmit={handleSubmit}
     >
       <p>
@@ -50,6 +48,7 @@ export function LoginForm () {
           required
         />
       </p>
+      <p>{error?.message}</p>
       <input type="submit" value="Login" />
     </form>
   );

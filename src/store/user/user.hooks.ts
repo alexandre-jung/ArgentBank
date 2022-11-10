@@ -1,5 +1,6 @@
 import { useAppDispatch, useAppSelector } from 'store';
 import { profileThunk } from './user.slice';
+import { useCallback } from 'react';
 
 export function useUserProfileQuery () {
   return useAppSelector(state => {
@@ -22,5 +23,8 @@ export function useUserProfileQuery () {
 
 export function useFetchUserProfile () {
   const dispatch = useAppDispatch();
-  return () => dispatch(profileThunk());
+
+  return useCallback(() => {
+    return dispatch(profileThunk());
+  }, [dispatch]);
 }

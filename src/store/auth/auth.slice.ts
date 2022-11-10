@@ -9,7 +9,7 @@ type State = {
 }
 
 const initialState: State = {
-  token: null,
+  token: sessionStorage.getItem('token'),
   error: null,
   isFetching: false,
 };
@@ -33,6 +33,7 @@ export const { reducer, actions } = createSlice({
   reducers: {
     logout: state => {
       state.token = null;
+      sessionStorage.removeItem('token');
     },
   },
   extraReducers: builder => {
@@ -45,6 +46,8 @@ export const { reducer, actions } = createSlice({
       state.token = action.payload;
       state.error = null;
       state.isFetching = false;
+      sessionStorage.setItem('token', action.payload);
+
     });
     builder.addCase(authenticationThunk.rejected, (state, action) => {
       state.token = null;

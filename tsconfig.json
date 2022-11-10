@@ -37,6 +37,9 @@
       "@components/*": [
         "./components/*"
       ],
+      "@hooks/*": [
+        "./hooks/*"
+      ],
       "@routes/*": [
         "./routes/*"
       ],

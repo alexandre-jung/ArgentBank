@@ -14,12 +14,25 @@ const initialState: State = {
   isFetching: false,
 };
 
+interface AuthenticationThunkOptions {
+  persistToken?: boolean;
+}
+
 export const authenticationThunk = createAsyncThunk(
   'user/login',
-  async (credentials: UserCredentials, { rejectWithValue }) => {
+  async ({
+    credentials,
+    options: { persistToken } = {},
+  }: {
+    credentials: UserCredentials
+    options?: AuthenticationThunkOptions
+  }, { rejectWithValue }) => {
     try {
       const response = await Api.user.login(credentials);
-      return response.token;
+      return {
+        token: response.token,
+        persistToken,
+      };
     } catch (error) {
       const serializedError = serializeError(error);
       return rejectWithValue(serializedError);
@@ -46,10 +59,9 @@ export const { reducer, actions } = createSlice({
       state.isFetching = true;
     });
     builder.addCase(authenticationThunk.fulfilled, (state, action) => {
-      state.token = action.payload;
+      state.token = action.payload.token;
       state.error = null;
       state.isFetching = false;
-
     });
     builder.addCase(authenticationThunk.rejected, (state, action) => {
       state.token = null;

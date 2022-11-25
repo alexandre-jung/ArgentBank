@@ -6,14 +6,14 @@ import { Icon } from 'components';
 import styles from './styles.module.scss';
 
 export function LoginForm () {
-  const authenticate = useAuthenticate();
-  const fetchProfile = useFetchUserProfile();
-  const { error } = useAuthenticationQuery();
-
-  const Email = useInputWithLabel({ initialValue: 'tony@stark.com' });
-  const Password = useInputWithLabel({ initialValue: 'password123' });
+  const Email = useInputWithLabel();
+  const Password = useInputWithLabel();
   const passwordToggle = usePasswordToggle();
   const RememberMe = useCheckboxWithLabel();
+
+  const authenticate = useAuthenticate(RememberMe.isChecked());
+  const fetchProfile = useFetchUserProfile();
+  const { error } = useAuthenticationQuery();
 
   async function handleSubmit (event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();

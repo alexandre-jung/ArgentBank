@@ -22,10 +22,15 @@ export function useLogout () {
   }, [dispatch]);
 }
 
-export function useAuthenticate () {
+export function useAuthenticate (persistToken?: boolean) {
   const dispatch = useAppDispatch();
   return (email: string, password: string) => dispatch(authenticationThunk({
-    email,
-    password,
+    credentials: {
+      email,
+      password,
+    },
+    options: {
+      persistToken,
+    },
   }));
 }

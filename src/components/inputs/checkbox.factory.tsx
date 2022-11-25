@@ -60,7 +60,7 @@ export function useCheckboxFactory ({ id, initialValue }: UseCheckboxFactoryPara
   return useMemo(() => ({
     Checkbox,
     setValue: setIsChecked,
-    get isChecked () {
+    isChecked () {
       return valueRef.current;
     },
   }), [Checkbox]);

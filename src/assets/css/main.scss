@@ -1,14 +1,16 @@
+@use './vendor/improved-sr-only';
+
 *,
 ::before,
 ::after {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #2c3e50;
 }
 
 body,
 html {
   margin: 0;
   padding: 0;
+  color: #2c3e50;
 }
 
 .list-unstyled {
@@ -27,6 +29,7 @@ html {
 
 a {
   text-decoration: none;
+  color: #2c3e50;
 }
 
 .bold {
@@ -47,4 +50,9 @@ header {
 
 nav a {
   margin-right: 5px;
+}
+
+label {
+  cursor: pointer;
+  user-select: none;
 }

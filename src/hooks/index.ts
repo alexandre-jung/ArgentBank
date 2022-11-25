@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { NavigateOptions, To, useNavigate } from 'react-router-dom';
+import { NavigateOptions, To, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useFetchUserProfile } from '@store/user';
-import { useLogout } from '@store/auth';
+import { useLogout } from 'store/auth';
 import routes from '../routes';
 
 export function useAppNavigate () {
@@ -19,7 +19,7 @@ export function useAppNavigate () {
   return useCallback(navigateCallback, []);
 }
 
-export function useFetchProfileOrRedirectToLogin() {
+export function useFetchProfileOrRedirectToLogin () {
   const fetchProfile = useFetchUserProfile();
   const logout = useLogout();
   const navigate = useAppNavigate();
@@ -32,4 +32,17 @@ export function useFetchProfileOrRedirectToLogin() {
       }
     });
   }, [fetchProfile, logout, navigate]);
+}
+
+export function useGenerateLogoutLink () {
+  const location = useLocation();
+  return {
+    pathname: routes.logout(),
+    search: `?from=${encodeURIComponent(location.pathname)}`,
+  };
+}
+
+export function useLogoutRedirectTarget () {
+  const [searchParams] = useSearchParams();
+  return searchParams.get('from') ?? '/';
 }

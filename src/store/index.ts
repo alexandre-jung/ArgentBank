@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { reducer as UserReducer } from './user';
-import { reducer as AuthReducer } from './auth';
+import { actions, reducer as AuthReducer, StoreJwtToken } from './auth';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 const store = configureStore({
@@ -8,7 +8,14 @@ const store = configureStore({
     auth: AuthReducer,
     user: UserReducer,
   },
+  middleware: getDefaultMiddleware => {
+    return getDefaultMiddleware().concat(
+      StoreJwtToken('JWT'),
+    );
+  },
 });
+
+store.dispatch(actions.retrieveToken());
 
 // Infer the `RootState` and `AppDispatch` types from the features itself
 export type RootState = ReturnType<typeof store.getState>

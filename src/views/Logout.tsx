@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
-import routes from 'routes';
 import { useLogout, useUserIsAuthenticated } from 'store/auth';
+import { useLogoutRedirectTarget } from 'hooks/index';
 
 export function Logout () {
   const logout = useLogout();
   const isAuthenticated = useUserIsAuthenticated();
+  const targetRoute = useLogoutRedirectTarget();
 
   useEffect(logout, [logout]);
 
@@ -13,5 +14,8 @@ export function Logout () {
     return <p>Logging out...</p>;
   }
 
-  return <Navigate to={routes.home()} />;
+  return <Navigate
+    to={{ pathname: targetRoute }}
+    replace
+  />;
 }

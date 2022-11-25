@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from 'store';
-import { profileThunk } from './user.slice';
+import { profileThunk, updateThunk } from './user.slice';
 import { useCallback } from 'react';
+import { UserUpdateParams } from '@api/api.types';
 
 export function useUserProfileQuery () {
   return useAppSelector(state => {
@@ -26,5 +27,13 @@ export function useFetchUserProfile () {
 
   return useCallback(() => {
     return dispatch(profileThunk());
+  }, [dispatch]);
+}
+
+export function useUpdateUserProfile () {
+  const dispatch = useAppDispatch();
+
+  return useCallback((updateInfo: UserUpdateParams) => {
+    return dispatch(updateThunk(updateInfo));
   }, [dispatch]);
 }

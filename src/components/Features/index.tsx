@@ -28,7 +28,7 @@ Features.Item = function Item ({ imageSource, title, children }: ItemProps) {
         alt="Chat icon"
       />
       <h3 className={styles.ItemTitle}>{title}</h3>
-      <p>{children}</p>
+      <p className={styles.ItemText}>{children}</p>
     </div>
   );
 };

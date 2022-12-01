@@ -2,6 +2,11 @@
   background: url(../../assets/bank-tree.jpeg) no-repeat center 33% / cover;
   height: 400px;
   position: relative;
+
+  @media screen and (max-width: 920px) {
+    height: 300px;
+    background-position: 0 -50px;
+  }
 }
 
 .Content {
@@ -12,15 +17,32 @@
   background-color: white;
   padding: 2rem;
   margin: 2rem;
+  box-shadow: 0 0 15px 4px gray;
+
+  @media screen and (max-width: 920px) {
+    position: relative;
+    top: 2rem;
+    right: 0;
+    margin: 0 auto;
+    width: 200px;
+  }
 }
 
 .Subtitle {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+
+  @media screen and (max-width: 920px) {
+    font-size: 1rem;
+  }
 }
 
 .Text {
   font-size: 1.2rem;
   margin-bottom: 0;
+
+  @media screen and (max-width: 920px) {
+    font-size: 0.9rem;
+  }
 }

@@ -2,11 +2,26 @@
   display: flex;
   flex-direction: row;
   text-align: center;
+
+  @media screen and (max-width: 920px) {
+    flex-direction: column;
+  }
 }
 
 .Item {
-  padding: 2.5rem;
+  padding: 4rem 2.5rem;
   flex: 1 1 0;
+  background-color: white;
+  margin: 2rem;
+  box-shadow: 0 0 15px 4px lightgray;
+
+  & + .Item {
+    margin-left: 0;
+
+    @media screen and (max-width: 920px) {
+      margin: 0 2rem 2rem;
+    }
+  }
 
   &Image {
     width: 100px;
@@ -18,5 +33,10 @@
   &Title {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+  }
+
+  &Text {
+    padding: 0 calc(20% - 2rem);
+    margin-bottom: 0;
   }
 }

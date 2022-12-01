@@ -23,13 +23,16 @@ export function LoginForm () {
 
   return (
     <form
+      className={styles.LoginForm}
       onSubmit={handleSubmit}
     >
-      <p>
-        <Email.Label>Email</Email.Label>
+      <Icon name="user" size={16} />
+      <h1>Sign in</h1>
+      <p className={styles.InputGroup}>
+        <Email.Label>Username</Email.Label>
         <Email.Input name="email" required />
       </p>
-      <p>
+      <p className={styles.InputGroup}>
         <Password.Label>Password</Password.Label>
         <Password.Input
           name="password"
@@ -48,12 +51,12 @@ export function LoginForm () {
           />
         </button>
       </p>
-      <p>
+      <p className={styles.CheckboxGroup}>
         <RememberMe.Checkbox />
         <RememberMe.Label>Remember me</RememberMe.Label>
       </p>
       <p>{error?.message}</p>
-      <input type="submit" value="Login" />
+      <input type="submit" value="Sign in" />
     </form>
   );
 }

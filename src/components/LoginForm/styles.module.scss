@@ -1,5 +1,54 @@
+.LoginForm {
+  box-shadow: 0 0 15px 4px lightgray;
+  width: 300px;
+  box-sizing: border-box;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  text-align: center;
+
+  [type=submit] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    border: none;
+    background-color: #00bc77;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.InputGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: left;
+
+  label {
+    font-weight: bold;
+  }
+
+  input {
+    font-size: 1.2rem;
+    padding: 5px;
+  }
+}
+
 .passwordVisibilityToggle {
   background: none;
   border: none;
   cursor: pointer;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+.CheckboxGroup {
+  text-align: left;
+
+  label {
+    margin-left: 5px;
+  }
 }

@@ -14,14 +14,6 @@ export function Hero ({ children }: HeroProps) {
   );
 }
 
-interface AriaProps {
-  children: React.ReactNode;
-}
-
-Hero.Aria = function Aria ({ children }: AriaProps) {
-  return <p className="sr-only">{children}</p>;
-};
-
 interface SubtitleProps {
   children: React.ReactNode;
 }

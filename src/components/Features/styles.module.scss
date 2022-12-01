@@ -1,0 +1,22 @@
+.Features {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.Item {
+  padding: 2.5rem;
+  flex: 1 1 0;
+
+  &Image {
+    width: 100px;
+    padding: 1rem;
+    border-radius: 50%;
+    border: 10px solid #00bc77;
+  }
+
+  &Title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+}

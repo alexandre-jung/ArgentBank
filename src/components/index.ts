@@ -5,3 +5,4 @@ export * from './PrivateRoute';
 export * from './Navigation';
 export * from './Header';
 export * from './Logo';
+export * from './Hero';

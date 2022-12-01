@@ -55,7 +55,7 @@ export function Navigation () {
                 className="ml-1 bold"
                 style={{ verticalAlign: 'middle' }}
               >
-                Log in
+                Sign in
               </span>
             </Link>
           </li>

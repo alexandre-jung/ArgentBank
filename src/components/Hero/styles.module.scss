@@ -1,0 +1,26 @@
+.Hero {
+  background: url(../../assets/bank-tree.jpeg) no-repeat center 33% / cover;
+  height: 400px;
+  position: relative;
+}
+
+.Content {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 300px;
+  background-color: white;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.Subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.Text {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}

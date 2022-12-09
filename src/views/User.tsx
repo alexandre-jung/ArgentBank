@@ -1,7 +1,9 @@
 import { useUserProfileQuery } from 'store/user';
 import { UpdateForm } from '@components/UpdateForm';
+import { useFetchProfileOrRedirectToLogin } from '@hooks/index';
 
 export function User () {
+  useFetchProfileOrRedirectToLogin();
   const { profile } = useUserProfileQuery();
 
   return (

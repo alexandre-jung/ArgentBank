@@ -8,14 +8,30 @@ export default function Router () {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path={routes.home()} element={<Views.Home />} />
-        <Route path={routes.user()} element={
-          <PrivateRoute>
-            <Views.User />
-          </PrivateRoute>
-        } />
-        <Route path={routes.login()} element={<Views.Login />} />
-        <Route path={routes.logout()} element={<Views.Logout />} />
+        <Route
+          path={routes.home()}
+          element={<Views.Home />}
+        />
+        <Route
+          path={routes.user()}
+          element={
+            <PrivateRoute>
+              <Views.User />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={routes.login()}
+          element={<Views.Login />}
+        />
+        <Route
+          path={routes.logout()}
+          element={<Views.Logout />}
+        />
+        <Route
+          path="*"
+          element={<Views.NotFound />}
+        />
       </Route>
     </Routes>
   );

@@ -8,3 +8,4 @@ export * from './Logo';
 export * from './SrOnly';
 export * from './Hero';
 export * from './Features';
+export * from './HomeLinkButton';

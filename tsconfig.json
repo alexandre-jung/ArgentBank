@@ -34,6 +34,10 @@
       "@assets/*": [
         "./assets/*"
       ],
+      "@components": [
+        "./components"
+      ],
+      //TODO remove this after update imports
       "@components/*": [
         "./components/*"
       ],

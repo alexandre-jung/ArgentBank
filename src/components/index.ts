@@ -9,3 +9,7 @@ export * from './SrOnly';
 export * from './Hero';
 export * from './Features';
 export * from './HomeLinkButton';
+export * from './UpdateForm';
+export * from './EditName';
+export * from './inputs';
+export * from './AccountsOverview';

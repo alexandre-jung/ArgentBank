@@ -1,0 +1,38 @@
+.UpdateForm {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.inputs {
+  flex: 1 1 100%;
+}
+
+.button {
+  flex: 1 1 calc(50% - 20px);
+  margin: 5px;
+
+  button {
+    padding: 6px 25px;
+    font-size: 1rem;
+    border: 1px solid #00bc77;
+    background-color: white;
+    color: #00bc77;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.input {
+  font-size: 1.2rem;
+  padding: 5px;
+  margin: 5px;
+}

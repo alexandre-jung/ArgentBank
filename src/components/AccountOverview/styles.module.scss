@@ -1,0 +1,27 @@
+.AccountsOverview {
+  margin-top: 50px;
+}
+
+.Account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 0 15px 4px lightgray;
+  border-radius: 2px;
+
+  * {
+    margin: 0;
+  }
+}
+
+.balance {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}

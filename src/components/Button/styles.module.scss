@@ -8,4 +8,10 @@
   color: #fff;
   cursor: pointer;
   border-radius: 2px;
+  font-size: inherit;
+  transition: background-color 150ms ease-in-out;
+
+  &:hover {
+    background-color: #089a64;
+  }
 }

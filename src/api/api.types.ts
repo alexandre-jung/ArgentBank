@@ -1,3 +1,5 @@
+import { ACCOUNT_TYPES, BALANCE_TYPES } from './constants';
+
 export type Token = string
 
 export type ApiResponse<DataType = never> = {
@@ -40,3 +42,13 @@ export type UserUpdateParams = {
   firstName: string
   lastName: string
 }
+
+export interface Account {
+  type: AccountType;
+  accountRef: string;
+  balance: number;
+  balanceType: BalanceType;
+}
+
+export type AccountType = typeof ACCOUNT_TYPES[number];
+export type BalanceType = typeof BALANCE_TYPES[number];

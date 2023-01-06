@@ -1,6 +1,7 @@
 import { useUserProfileQuery } from '@store/user';
 import { useFetchProfileOrRedirectToLogin } from '@hooks/index';
-import { AccountsOverview, EditName } from '@components';
+import { AccountOverview, EditName } from '@components';
+import { Accounts } from '@api/mock';
 import styles from './styles.module.scss';
 
 export function User () {
@@ -14,7 +15,17 @@ export function User () {
         {profile?.firstName} {profile?.lastName}
       </h1>
       <EditName />
-      <AccountsOverview />
+      <AccountOverview>
+        {Accounts.map(account => (
+          <AccountOverview.Account
+            type={account.type}
+            accountRef={account.accountRef}
+            balance={account.balance}
+            balanceType={account.balanceType}
+            key={account.accountRef}
+          />
+        ))}
+      </AccountOverview>
     </section>
   );
 }

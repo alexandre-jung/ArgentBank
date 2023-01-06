@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { UpdateForm } from '@components';
 import styles from './styles.module.scss';
+import { Button } from '@components/Button';
 
 export function EditName () {
   const [isEditing, setIsEditing] = useState(false);
@@ -15,13 +16,8 @@ export function EditName () {
             onSuccess={hideForm}
             onCancel={hideForm}
           /> :
-          <button
-            className={styles.editButton}
-            type="button"
-            onClick={showForm}
-          >
-            Edit name
-          </button>
+
+          <Button onClick={showForm}>Edit name</Button>
       }
     </div>
   );

@@ -42,7 +42,7 @@ export function useGenerateLogoutLink () {
   };
 }
 
-export function useLogoutRedirectTarget () {
+export function useLogoutRedirectTarget (forceTo?: string) {
   const [searchParams] = useSearchParams();
-  return searchParams.get('from') ?? '/';
+  return forceTo ?? searchParams.get('from') ?? routes.home();
 }
